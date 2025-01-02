@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+        <h1 class="main-heading">Payment Form</h1>
+        <p id="red">required fields are followed by *</p>
+        <div class="sub-container">
+            <h2>Contact Information</h2>
+            <p>Name: * <input type="text" name="name" required placeholder="Enter your name"> </p>
+            <fieldset>
+            <legend>Gender*</legend>
+            <p>
+            Male <input type="radio" name="gender" id="male" required>
+            Female <input type="radio" name="gender" id="female" required>
+            </p>
+            </fieldset>
+            <p>Address: <textarea name="address" id="address" cols="45" rows="10" placeholder="Enter your Full Address"></textarea></p>
+            <p>Email: * <input type="email" name="email" id="email" required placeholder="Please Enter your Email"></p>
+            <p>Pincode: <input type="number" name="pincode" id="pincode" required placeholder="Enter your pincode"></p>
+        </div>
+        <div class="sub-container">
+            <h2>Payment Information</h2>
+            <p>Card Type: *
+            <select name="card_type" id="card_type" required>
+            <option value="">--Select a Card Type--</option>
+            <option value="Visa">Visa</option>
+            <option value="rupay">Rupay</option>
+            <option value="mastercard">Mastercard</option>
+            </select>
+            </p>
+            <p>Card Number* <input type="number" name="card_Number" id="card_Number" placeholder="xxxx xxxx xxxx xxxx" required></p>
+            <p>Expiration Date: * <input type="date" name="exp_date" id="exp_date" placeholder="dd-mm-yyyy" required></p>
+            <p>CVV* <input type="password" name="cvv" id="cvv" placeholder="xxx" required></p>
+        </div>
+        <input type="submit" value="Pay Now" onclick="displayMessage(event)">
+        </form>
+        </div>
+        <div id="paymentMessage" class="payment-message">
+            Payment Successful!
+        </div>
+        <script>
+            function displayMessage(event) {
+                event.preventDefault(); // Prevent the form from actually submitting
+                
+                // Check if required fields are filled
+                var name = document.querySelector('input[name="name"]').value;
+                var email = document.querySelector('input[name="email"]').value;
+                var gender = document.querySelector('input[name="gender"]:checked');
+                var cardNumber = document.querySelector('input[name="card_Number"]').value;
+                var expDate = document.querySelector('input[name="exp_date"]').value;
+                var cvv = document.querySelector('input[name="cvv"]').value;
+        
+                // Check if all required fields are filled
+                if (name && email && gender && cardNumber && expDate && cvv) {
+                    // If all fields are filled, show the success message after 3 seconds
+                    setTimeout(function() {
+                        document.getElementById('paymentMessage').style.display = 'block'; // Show the message
+                    }, 3000);
+                } else {
+                    // If not all fields are filled, show an alert to inform the user
+                    alert("Please fill in all the required fields.");
+                }
+            }
+        </script>
+        
+         
+        
+</body>
+</html>

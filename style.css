@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+ 
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin:15px 30px;
+    padding: 4px 4px;
+    
+}
+
+.container{
+    background-color: rgba(45, 1, 69, 0.667);
+    padding: 15px 20px;
+    margin: 20px 350px;
+    border: 2px solid rgb(47, 47, 47);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+
+}
+
+.sub-container{
+    background-color: rgba(233, 224, 238, 0.183);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+#red{
+    color: rgb(112, 2, 2);
+    text-align: left;
+    margin-left: 8px;
+}
+
+h2{
+    text-align: center;
+    margin:20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+option,
+textarea{
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid rgb(47, 47, 47);
+    border-radius: 5px;
+    margin-top: 4px;
+
+}
+
+input[type="submit"]{
+    text-align: center;
+    margin:5px;
+    width: 40%;
+    margin-left:130px;
+    padding: 5px 10px;
+    font-size: 15px;
+    background-color: bisque;
+    border: 2px solid rgb(47, 47, 47);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(48, 4, 53);
+    color:aliceblue;
+    font-weight: bold;
+}
+
+.main-heading{
+    text-align: center;
+    text-shadow: 100px;
+    padding: 0 4px;
+    
+}
+input[type="submit"]:hover {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 2px solid rgba(45, 1, 69, 0.8);
+    box-shadow: 0 0 5px rgba(45, 1, 69, 0.5);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 20px;
+    }
+    input[type="submit"] {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+::placeholder {
+    color: grey;
+    font-style: italic;
+}
+
+.payment-message {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        top: 10px;
+    }
+    to {
+        opacity: 1;
+        top: 20px;
+    }
+}
