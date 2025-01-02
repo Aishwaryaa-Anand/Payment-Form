@@ -22,9 +22,9 @@ This is a simple payment form that allows users to fill in their details and sub
    Navigate to the folder where you cloned the repository.
    Open index.html in your browser to view the payment form.
    
-##Demo
+<h2>Demo</h2>
 You can view a live demo of the payment form by visiting the GitHub repository, or host it on your local server to see it in action.
 
-##Technologies Used
+<h2>Technologies Used</h2>
 HTML: For structuring the payment form.
 CSS: For styling the page and making it responsive
