@@ -46,28 +46,34 @@
             Payment Successful!
         </div>
         <script>
-            function displayMessage(event) {
-                event.preventDefault(); // Prevent the form from actually submitting
-                
-                // Check if required fields are filled
-                var name = document.querySelector('input[name="name"]').value;
-                var email = document.querySelector('input[name="email"]').value;
-                var gender = document.querySelector('input[name="gender"]:checked');
-                var cardNumber = document.querySelector('input[name="card_Number"]').value;
-                var expDate = document.querySelector('input[name="exp_date"]').value;
-                var cvv = document.querySelector('input[name="cvv"]').value;
-        
-                // Check if all required fields are filled
-                if (name && email && gender && cardNumber && expDate && cvv) {
-                    // If all fields are filled, show the success message after 3 seconds
-                    setTimeout(function() {
-                        document.getElementById('paymentMessage').style.display = 'block'; // Show the message
-                    }, 3000);
-                } else {
-                    // If not all fields are filled, show an alert to inform the user
-                    alert("Please fill in all the required fields.");
-                }
-            }
+           function displayMessage(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Get the form and required inputs
+    var form = event.target;
+    var name = document.querySelector('input[name="name"]').value;
+    var email = document.querySelector('input[name="email"]').value;
+    var gender = document.querySelector('input[name="gender"]:checked');
+    var cardNumber = document.querySelector('input[name="card_Number"]').value;
+    var expDate = document.querySelector('input[name="exp_date"]').value;
+    var cvv = document.querySelector('input[name="cvv"]').value;
+
+    // Validate if all required fields are filled
+    if (name && email && gender && cardNumber && expDate && cvv) {
+        // Show success message after 3 seconds
+        setTimeout(function () {
+            document.getElementById('paymentMessage').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('paymentMessage').style.display = 'none';
+                form.reset(); // Reset all form inputs
+            }, 2000); // Hide message after 2 seconds
+        }, 3000);
+    } else {
+        // If any required field is missing, show alert
+        alert("Please fill in all the required fields.");
+    }
+}
+
         </script>
         
          
